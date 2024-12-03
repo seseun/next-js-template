@@ -17,8 +17,8 @@ npx create-next-app@latest <프로젝트이름>
 
 다음 VS Code 확장 프로그램이 설치되어 있어야 합니다.
 
--   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): 코드 품질 확인 및 버그, 안티패턴(Anti-pattern)을 감지
--   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): 코드 스타일 및 포맷팅 관리, 일관된 코드 스타일을 적용 가능
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): 코드 품질 확인 및 버그, 안티패턴(Anti-pattern)을 감지
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): 코드 스타일 및 포맷팅 관리, 일관된 코드 스타일을 적용 가능
 
 Prettier 관련 패키지들을 설치합니다.
 
@@ -39,14 +39,28 @@ ESLint 구성을 다음과 같이 수정합니다.
 
 ```json --path=/.prettierrc --line-active=9
 {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
     "semi": true,
-    "singleQuote": true,
-    "singleAttributePerLine": true,
-    "bracketSameLine": true,
-    "endOfLine": "lf",
-    "trailingComma": "none",
-    "arrowParents": "avoid",
-    "tabWidth": 4
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "useTabs": false,
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "printWidth": 200
+            }
+        }
+    ]
 }
 ```
 
